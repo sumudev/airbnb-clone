@@ -201,10 +201,12 @@
       top: 75px;
       right: 24px;
       width: 240px;
-      background-color: var(--bg);
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      border: 1px solid var(--light-border);
+      border: 1px solid rgba(0, 0, 0, 0.08);
       display: none;
       flex-direction: column;
       padding: 8px 0;
@@ -265,17 +267,19 @@
     .expanded-search-bar {
       width: 100%;
       max-width: 850px;
-      background-color: var(--bg-hover);
+      background: rgba(247, 247, 247, 0.9);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       border: 1px solid var(--border);
-      border-radius: 32px;
+      border-radius: 40px;
       display: flex;
-      box-shadow: var(--shadow-sm);
+      box-shadow: var(--shadow);
       position: relative;
     }
 
     .search-section {
       flex: 1;
-      padding: 12px 24px;
+      padding: 14px 28px;
       display: flex;
       flex-direction: column;
       gap: 4px;
@@ -284,8 +288,8 @@
       transition: background-color 0.2s ease;
     }
     .search-section:hover {
-      background-color: #EBEBEB;
-      border-radius: 32px;
+      background-color: rgba(0, 0, 0, 0.05);
+      border-radius: 40px;
     }
     .search-section:not(:last-child)::after {
       content: '';
@@ -358,8 +362,10 @@
       top: calc(100% + 12px);
       right: 0;
       width: 380px;
-      background-color: var(--bg);
-      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(0, 0, 0, 0.08);
       border-radius: var(--radius-lg);
       box-shadow: var(--shadow);
       padding: 24px;
@@ -629,6 +635,10 @@
       height: 100%;
       object-fit: cover;
       flex-shrink: 0;
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .listing-card:hover .slider-image {
+      transform: scale(1.04);
     }
 
     /* Slider arrow chevrons shown on hover */
@@ -706,14 +716,25 @@
       position: absolute;
       top: 12px;
       right: 12px;
-      color: rgba(0, 0, 0, 0.5);
-      font-size: 24px;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-sm);
+      color: rgba(0, 0, 0, 0.6);
+      font-size: 15px;
       z-index: 10;
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.2));
-      transition: transform 0.2s ease, color 0.2s ease;
+      transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.2s ease, background-color 0.2s ease;
     }
     .wishlist-btn:hover {
-      transform: scale(1.15);
+      transform: scale(1.1);
+      background: rgba(255, 255, 255, 0.95);
+      color: var(--dark);
     }
 
     @keyframes heartBounce {
@@ -737,7 +758,7 @@
       gap: 3.5px;
       font-size: 15px;
       padding: 10px 4px;
-      line-height: 1.4;
+      line-height: 1.5;
     }
     .card-header-row {
       display: flex;
@@ -794,7 +815,9 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       z-index: 3000;
       display: none; /* Triggered after 2 seconds */
       align-items: center;
@@ -1063,7 +1086,7 @@
       }
       .card-details {
         padding: 10px 4px;
-        line-height: 1.4;
+        line-height: 1.5;
       }
 
       /* Expanding Search Panel on Mobile */
